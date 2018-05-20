@@ -6,6 +6,12 @@ gem 'rails', '4.2.5'
 # 認証機能(ログイン、ログアウト)を簡単に実装できるライブラリ
 gem 'devise'
 
+# Bootstrapの導入
+gem 'twitter-bootstrap-rails'
+
+# deviseで作成された画面に対してBootstrapを適応させる
+gem 'devise-bootstrap-views'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
