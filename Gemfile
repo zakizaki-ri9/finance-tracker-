@@ -12,6 +12,9 @@ gem 'twitter-bootstrap-rails'
 # deviseで作成された画面に対してBootstrapを適応させる
 gem 'devise-bootstrap-views'
 
+# 株式チャートを
+gem 'stock_quote'
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
