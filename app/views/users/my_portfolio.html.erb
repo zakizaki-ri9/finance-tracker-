@@ -23,7 +23,7 @@
   <% end %>
 </div>
 
-<% if !@stock.nil? %>
+<% if @stock %>
   <div class="well results-block">
     <strong>Symbol: </strong><%= @stock.ticker %>
     <strong>Name: </strong><%= @stock.name %>
