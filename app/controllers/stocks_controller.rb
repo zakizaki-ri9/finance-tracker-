@@ -1,20 +1,22 @@
 class StocksController < ApplicationController
   
   def search
-    if params[:stock].present?
-      @stock = Stock.new_from_lookup(params[:stock])
-      if @stock
-        # 部分ビューのみ更新
-        render partial: 'users/result'
-      else
-        flash[:danger] = "You have entered on incorrect symbol"
-        redirect_to my_portfolio_path
-      end
+    if params[:stock].blank?
+      
+      # 検索条件が空欄だった場合のメッセージ設定
+      flash.now[:danger] = "You have entered on empty search string"
       
     else
-      flash[:danger] = "You have entered on empty search string"
-      redirect_to my_portfolio_path
+      
+      # 株式情報取得
+      @stock = Stock.new_from_lookup(params[:stock])
+      
+      # 取得失敗した場合のメッセージ設定
+      flash.now[:danger] = "You have entered on incorrect symbol" unless @stock
     end
+    
+    # 部分ビューのみ更新
+    render partial: 'users/result'
   end
   
 end
