@@ -4,7 +4,8 @@ class StocksController < ApplicationController
     if params[:stock].present?
       @stock = Stock.new_from_lookup(params[:stock])
       if @stock
-        render 'users/my_portfolio'
+        # 部分ビューのみ更新
+        render partial: 'users/result'
       else
         flash[:danger] = "You have entered on incorrect symbol"
         redirect_to my_portfolio_path
