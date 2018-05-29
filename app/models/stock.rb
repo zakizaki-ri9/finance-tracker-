@@ -1,5 +1,8 @@
 class Stock < ActiveRecord::Base
   
+  has_many :user_stocks
+  has_many :stocks, through: :user_stocks
+  
   # 株式情報を取得する処理
   # ticker_symbol - 名前(ex. "GOOG"など)
   def self.new_from_lookup(ticker_symbol)
