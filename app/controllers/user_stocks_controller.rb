@@ -10,7 +10,6 @@ class UserStocksController < ApplicationController
     
     @user_stock = UserStock.create(user: current_user, stock: stock)
     
-    # TODO:上下に出力されてしまうことへの対処
     flash[:success] = "Stock #{@user_stock.stock.name} was successfully added to portfolio"
     
     redirect_to my_portfolio_path
