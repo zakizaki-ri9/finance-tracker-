@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'my_friends', to: 'users#my_friends'
   resources :users, only: [:show]
   resources :friendships
+  get 'search_friends', to: 'users#search'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
