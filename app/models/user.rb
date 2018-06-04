@@ -57,4 +57,14 @@ class User < ActiveRecord::Base
   def self.email_matches(param)
     matches('email', param)
   end
+  
+  # 引数「users」から自分のオブジェクトを除く
+  def except_current_user(users)
+    users.reject { |user| user.id == self.id }
+  end
+  
+  # 友達として追加済みかチェックする
+  def not_friends_with?(friend_id)
+    friendships.where(friend_id: friend_id).count < 1
+  end
 end

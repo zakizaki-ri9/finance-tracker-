@@ -20,6 +20,9 @@ class UsersController < ApplicationController
       # ユーザー検索
       @users = User.search(params[:search_param])
       
+      # 検索結果から自分のオブジェクトを除く
+      @users = current_user.except_current_user(@users)
+      
       # 取得失敗した場合のメッセージ設定
       flash.now[:danger] = "No users match" if @users.blank?
     end
