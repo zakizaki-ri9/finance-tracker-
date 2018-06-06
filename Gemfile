@@ -12,7 +12,7 @@ gem 'twitter-bootstrap-rails'
 # deviseで作成された画面に対してBootstrapを適応させる
 gem 'devise-bootstrap-views'
 
-# 株式チャートを
+# 株式チャートを検索するためのgem
 gem 'stock_quote'
 
 gem 'sass-rails', '~> 5.0'
@@ -22,6 +22,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+# turbolinksによって$(document).readyが発火されない問題を解決させるgem
+gem 'jquery-turbolinks'
 
 group :development, :test do
   gem 'byebug'
